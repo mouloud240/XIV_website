@@ -1,8 +1,8 @@
 
-const description = () => {
+const Description = () => {
   return (
     <div>description</div>
   )
 }
 
-export default description
+export default Description
