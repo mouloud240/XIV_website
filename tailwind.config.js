@@ -13,6 +13,10 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    fontFamily: {
+      'Beatrice-Deck-Trial': ['Beatrice Deck Trial', 'sans-serif'], // Fixed font family name
+
+    },
   },
   plugins: [],
 };
