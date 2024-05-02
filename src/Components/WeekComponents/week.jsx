@@ -1,9 +1,9 @@
 import React from 'react'
 
-const week = () => {
+const Week = () => {
   return (
     <div>week</div>
   )
 }
 
-export default week
+export default Week
