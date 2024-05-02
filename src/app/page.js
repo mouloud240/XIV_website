@@ -5,15 +5,19 @@ import Week from "@/Components/WeekComponents/week"
 
 
 
+
+
+
 const page = () => {
   return (
     <div>
       <Hero/>
       <Week/>
       <Collection/>
-     
-     <Description/>
-     
+
+    
+
+      <Description/>
     </div>
   )
 }
