@@ -2,11 +2,12 @@ import React from 'react'
 import  Image from 'next/image'
 import Link from 'next/link'
 import Info  from '@/constants/Constants.js';
+import style from './footer.module.css'
 
 const Footer = () => {
   return (
-    <div className="flex justify-around items-center bg-footerbg">
-      <div>
+    <div className={`flex justify-around items-center bg-footerbg ${style.footer}`}>
+      <div >
         
       {
         Info.map((item) => (
