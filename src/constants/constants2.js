@@ -1,6 +1,7 @@
- const Navlinks=[
+ const  Navlinks=[
     {name:"Home", path:"/"},
     {name:"Collection", path:"/"},
     {name:"New", path:"/"},
 ]
-export default Navlinks;
+
+export default Navlinks
