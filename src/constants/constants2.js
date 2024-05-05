@@ -1,4 +1,4 @@
-const Navlinks=[
+ const Navlinks=[
     {name:"Home", path:"/"},
     {name:"Collection", path:"/"},
     {name:"New", path:"/"},

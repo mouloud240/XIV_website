@@ -1,4 +1,4 @@
-import Navlinks from "@/Constants"
+import Navlinks from "@/constants/constants2"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -20,7 +20,7 @@ const Navbar = () => {
                     Navlinks.map((item,index)=>(
                         <li key={index}>
                            <Link href={item.path}>
-                            <p className="font-Beatrice-Deck-Trial font-medium">
+                            <p className="font-Beatrice-Deck-Trial font-medium ">
                             {item.name}
                             </p>
                           
@@ -43,26 +43,26 @@ const Navbar = () => {
                
             </div>
             <div className="flex gap-10 ">
-            
-                    <div className="bg-black rounded-full flex justify-center  px-6 items-center bg-opacity-80 cursor-pointer ">
-                        
-                        <Image
-                        src={'Assets/heart.svg'}
-                        width={25}
-                        height={25}
-                        alt="Heart"
-                        />
-                          
-                    </div>
-          
+              
+                <div className="bg-black rounded-full flex justify-center  px-4 items-center bg-opacity-80 pointer ">
+                    <Image
+                    src={'Assets/heart.svg'}
+                    width={25}
+                    height={25}
+                    alt="Heart"
+                    />
+                     
+                </div>
                 <div className="flex ">
-                    <div className="bg-black rounded-full flex items-center justify-center  py-1 px-8  bg-opacity-80 cursor-pointer">
+              
+                    <div className="bg-black rounded-full flex items-center justify-center  py-1 px-8  bg-opacity-80">
+                    
                           <p className="text-white font-medium">
                             Cart
                           </p>
                         
                     </div>
-                    <div className="border-8 border-black  rounded-full border-opacity-80 cursor-pointer">
+                    <div className="border-8 border-black  rounded-full border-opacity-80 cursor-pointer ">
                     <Image
                           src={'Assets/bag.svg'}
                           height={45}
@@ -70,8 +70,10 @@ const Navbar = () => {
                           alt="Bag"
                           />
                     </div>
+                
                 </div>
-                <div className="bg-black bg-opacity-80 rounded-full items-center flex justify-center px-7 cursor-pointer">
+               
+                <div className="bg-black bg-opacity-80 rounded-full items-center flex justify-center px-7">
                     <Image
                     src={'Assets/profile.svg'}
                     height={25}
