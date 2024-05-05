@@ -15,7 +15,9 @@ module.exports = {
     },
     fontFamily: {
       'Beatrice-Deck-Trial': ['Beatrice Deck Trial', 'sans-serif'], // Fixed font family name
-
+    },
+    colors:{
+      footerbg:"F5F5F5"
     },
   },
   plugins: [],
