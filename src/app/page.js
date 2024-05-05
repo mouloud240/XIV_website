@@ -14,9 +14,6 @@ const page = () => {
       <Hero/>
       <Week/>
       <Collection/>
-
-    
-
       <Description/>
     </div>
   )
