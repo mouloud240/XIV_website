@@ -18,17 +18,17 @@ const Description = () => {
            </h3>
         </div>
       </div>
-      <div className="flex justify-center mt-4  gap-20">
+      <ul className="flex justify-center mt-4 ml-20  gap-24">
         {
-           Images.map((item) => (
-           
+           Images.map((item,index) => (
+           <li key={index} className="w-[340px] h-[420px] overflow-clip">               <Image src={item.image} alt={item.alt} key={item.src} className={`${item.margin} outline-none`} height={item.height} width={item.width} />
+           </li>
        
-               <Image src={item.image} alt={item.alt} key={item.src} className={`${item.margin}`} height={290} width={290} />
              
 
            ))
         }
-      </div>
+      </ul>
     </section>
   )
 }
