@@ -20,7 +20,7 @@ const Navbar = () => {
                     Navlinks.map((item,index)=>(
                         <li key={index}>
                            <Link href={item.path}>
-                            <p className="font-Beatrice-Deck-Trial font-medium ">
+                            <p className="font-Beatrice-Deck-Trial font-medium hover:scale-110 duration-400 ">
                             {item.name}
                             </p>
                           
@@ -40,11 +40,11 @@ const Navbar = () => {
                 
                 />
                 </Link>
-               
+        
             </div>
             <div className="flex gap-10 ">
               
-                <div className=" rounded-full bg-black flex justify-center  px-6 items-center   ">
+                <div className=" rounded-full bg-black flex justify-center  px-6 items-center cursor-pointer   ">
                     <Image
                     src={'Assets/heart.svg'}
                     width={25}
@@ -55,14 +55,14 @@ const Navbar = () => {
                 </div>
                 <div className="flex ">
               
-                    <div className=" bg-black rounded-full flex items-center justify-center  py-1 px-8  bg-opacity-80">
+                    <div className=" bg-black rounded-full flex items-center justify-center  py-1 px-10 hover:bg-blue-800 duration-500  bg-opacity-80 cursor-pointer">
                     
                           <p className="text-white font-medium">
                             Cart
                           </p>
                         
                     </div>
-                    <div className="border-8 border-black  rounded-full border-opacity-80 cursor-pointer ">
+                    <div className="border-8 border-black rounded-full border-opacity-80 cursor-pointer ">
                     <Image
                           src={'Assets/bag.svg'}
                           height={45}
@@ -73,7 +73,7 @@ const Navbar = () => {
                 
                 </div>
                
-                <div className="bg-black bg-opacity-80 rounded-full items-center flex justify-center px-7">
+                <div className="bg-black bg-opacity-80 rounded-full items-center flex  hover:bg-blue-900 duration-500  justify-center px-7 cursor-pointer">
                     <Image
                     src={'Assets/profile.svg'}
                     height={25}

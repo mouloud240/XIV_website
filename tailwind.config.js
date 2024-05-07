@@ -7,6 +7,30 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        // Define default font sizes for headings
+        'h1': ['2.25rem', { lineHeight: '2.5rem' }], // Example size for h1
+        'h2': ['1.875rem', { lineHeight: '2.25rem' }], // Example size for h2
+        'h3': ['1.5rem', { lineHeight: '1.75rem' }], // Example size for h3
+        'h4': ['1.25rem', { lineHeight: '1.5rem' }], // Example size for h4
+        'h5': ['1.125rem', { lineHeight: '1.25rem' }], // Example size for h5
+        'h6': ['1rem', { lineHeight: '1.125rem' }], // Example size for h6
+      },
+      fontWeight: {
+        'h1': '800', // Example font weight for h1
+        'h2': '700', // Example font weight for h2
+        // Define font weights for other headings as needed
+      },
+      lineHeight: {
+        'h1': '2.5rem', // Example line height for h1
+        'h2': '2.25rem', // Example line height for h2
+        // Define line heights for other headings as needed
+      },
+      letterSpacing: {
+        'h1': '-0.025em', // Example letter spacing for h1
+        'h2': '-0.025em', // Example letter spacing for h2
+        // Define letter spacing for other headings as needed
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
