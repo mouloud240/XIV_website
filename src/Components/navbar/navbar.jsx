@@ -1,14 +1,12 @@
 import Navlinks from "@/constants/constants2.js"
 import Image from "next/image"
 import Link from "next/link"
-
 const Navbar = () => {
   return (
     <div className="mt-4 mx-10 ">
         <div className="flex justify-between items-center">
             <ul className="flex gap-6 items-center">
                 <button>
-                    
                     <Image
                     src={'Assets/drawer.svg'}
                     width={35}
@@ -53,9 +51,9 @@ const Navbar = () => {
                     />
                      
                 </div>
-                <div className="flex ">
+                <div className="flex">
               
-                    <div className=" bg-black rounded-full flex items-center justify-center  py-1 px-10 hover:bg-blue-800 duration-500  bg-opacity-80 cursor-pointer">
+                    <div className="  bg-black rounded-full flex items-center justify-center  py-1 px-10 hover:bg-blue-800 duration-500  bg-opacity-80 cursor-pointer">
                     
                           <p className="text-white font-medium">
                             Cart

@@ -12,7 +12,7 @@ const Footer = () => {
       {
         Info.map((item) => (
           <Link href={item.path} key={item.path}>
-            <p className='font-Beatrice-Deck-Trial text-gray-800/50 my-3'>
+            <p className='font-Beatrice-Deck-Trial hover:text-black hover:scale-120 duration-300 text-gray-800/50 my-3'>
               {item.name}
             </p>
           </Link>

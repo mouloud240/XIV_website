@@ -2,7 +2,7 @@
  const  Info = [
     {name:"info",path:"/"},
     {name:"Pricing", path:"/"},
-    {name:"ABout", path:"/"},
+    {name:"About", path:"/"},
     {name:"Contact", path:"/"},
 ];
 export default Info;
