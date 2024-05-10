@@ -41,6 +41,7 @@ module.exports = {
       'Beatrice-Deck-Trial': ['Beatrice Deck Trial', 'sans-serif'], // Fixed font family name
     },
     colors: {
+      
       footerbg:"#F5F5F5",
       transparent: 'transparent',
       current: 'currentColor',
@@ -57,6 +58,7 @@ module.exports = {
         700: '#374151',
         800: '#1f2937',
         900: '#111827',
+        1000:'#D9d9d9',
       },
       red: {
         50: '#fef2f2',

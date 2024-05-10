@@ -6,7 +6,7 @@ import style from './footer.module.css'
 
 const Footer = () => {
   return (
-    <div className={`flex justify-around items-center bg-footerbg ${style.footer}`}>
+    <div className={`flex justify-around items-center bg-footerbg ${style.footer} h-96`}>
       <div >
         
       {
