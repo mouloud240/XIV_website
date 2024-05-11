@@ -4,5 +4,6 @@ let outfits=
 '/outfits/outfit2.jpg',
 '/outfits/outfit3.jpg',
 '/outfits/outfit4.jpg',
+
 ]
 export default outfits;
