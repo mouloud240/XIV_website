@@ -5,36 +5,26 @@ import Image from 'next/image'
 import outfits from '@/constants/outfits'
 import { useState } from 'react'
 
+
+
+
+
+
 const Hero = () => {
-  let saison = 'Summer 2024'
-
-  
- 
-  let slide = (counter
-
-  ) => {
-  
-      return outfits[Math.abs(counter % outfits.length)]
-    
-  }
-
-  const  [counter, setCounter] = useState(1);
-  
-  let handleClickup= () => {
+let saison = 'Summer 2024'
+let slide = (counter) => {
+    return outfits[Math.abs(counter % outfits.length)]
+    }
+ const[counter, setCounter] = useState(1);
+   let handleClickup= () => {
     setCounter(counter + 1);
-  }
-  
-
-   
+  } 
   let handleClickdown=() => {
     setCounter(counter - 1);
-  
-}
- 
-  
- 
+  }
+
   return (
-    <div className=' px-40 py-40 flex justify-between '>
+    <div className=' px-10 py-20 flex justify-between '>
      <section className=''>
       <section className='mb-[190px]'>
       <h1 className='font-Beatrice-Deck-Trial font-extrabold text-6xl tracking-relaxed leading-12 text-center w-[283px] '>THE NEW COLLECTION</h1>
@@ -49,14 +39,10 @@ const Hero = () => {
       <button className='border-gray-1000 border-2 h-[40] px-4 text-gray-1000 hover:text-black hover:border-black' onClick={handleClickup}> &#62;  </button>
       </div>
       </section>
-      <aside className='flex  justify-center gap-5 w-1/2'>
-            <Image src={slide(counter)} alt='outfit' width={366} height={376} />
-            <Image src={slide(counter+1)} alt='outfit' width={366} height={376} />
+      <aside className='flex  justify-center gap-6 w-1/2 pr-16'>
+            <Image src={slide(counter)} alt='outfit' width={366} height={376} className='border boder-2 border-gray-400 '/>
+            <Image src={slide(counter+1)} alt='outfit' width={366} height={376} className='border boder-2 border-gray-400'/>
           </aside>
-      
-       
-        
-   
       </div>
   )}
 
