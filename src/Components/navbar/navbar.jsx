@@ -1,12 +1,25 @@
+
+"use client"
+import { UseGenerationStore } from "@/State"
 import Navlinks from "@/constants/constants2.js"
 import Image from "next/image"
 import Link from "next/link"
+
 const Navbar = () => {
+const {drawerToggled,setDrawerToggled}=UseGenerationStore();
+const handledrawer = () => {
+    if (drawerToggled !== undefined) {
+      setDrawerToggled(!drawerToggled);
+      console.log(drawerToggled);
+    } else {
+      console.warn("drawerToggled state not initialized yet");
+    }
+  }
   return (
     <div className="mt-4 mx-10 ">
         <div className="flex justify-between items-center">
             <ul className="flex gap-6 items-center">
-                <button>
+                <button onClick={handledrawer}>
                     <Image
                     src={'Assets/drawer.svg'}
                     width={35}
