@@ -1,9 +1,9 @@
 // 
  const  Info = [
-    {name:"info",path:"/"},
-    {name:"Pricing", path:"/"},
-    {name:"About", path:"/"},
-    {name:"Contact", path:"/"},
+    {name:"info",path:"/a"},
+    {name:"Pricing", path:"/s"},
+    {name:"About", path:"/d"},
+    {name:"Contact", path:"/r"},
 ];
 export default Info;
 
