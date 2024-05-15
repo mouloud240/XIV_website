@@ -3,7 +3,11 @@ import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
 import outfits from '@/constants/outfits'
-import { useState } from 'react'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useRef } from 'react'
+
 
 
 
@@ -12,38 +16,87 @@ import { useState } from 'react'
 
 const Hero = () => {
 let saison = 'Summer 2024'
-let slide = (counter) => {
-    return outfits[Math.abs(counter % outfits.length)]
-    }
- const[counter, setCounter] = useState(1);
-   let handleClickup= () => {
-    setCounter(counter + 1);
-  } 
-  let handleClickdown=() => {
-    setCounter(counter - 1);
-  }
+
+let sliderRef = useRef(null);
+  const next = () => {
+    sliderRef.slickNext();
+  };
+  const previous = () => {
+    sliderRef.slickPrev();
+  };
+  
+  const settings = {
+    className: "center",
+    infinite: true,
+    slidesToShow: 2,
+    speed: 1000,
+    focusOnSelect: true,
+    arrows:false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
+
 
   return (
-    <div className=' px-10 py-20 flex justify-between '>
-     <section className=''>
-      <section className='mb-[190px]'>
-      <h1 className='font-Beatrice-Deck-Trial font-extrabold text-6xl tracking-relaxed leading-12 text-center w-[283px] '>THE NEW COLLECTION</h1>
-      <h2 className='font-Beatrice-Deck-Trial w-[87px]'>{saison}</h2>
+    <div className=" px-10 py-20 flex justify-between font-Beatrice-Deck-Trial ">
+      <section className="">
+        <section className="mb-72">
+          <h1 className=" font-extrabold text-6xl tracking-relaxed leading-12 text-center w-72 ">
+            THE NEW <br/> COLLECTION
+          </h1>
+          <h2 className=" w-10">{saison}</h2>
+        </section>
+        <div className="flex gap-4">
+          <Link
+            href="/"
+            className="flex justify-between items-center bg-gray-1000 px-5 py-5 w-72 h-10 "
+          >
+            <p className="font-Beatrice-Deck-Trial font-medium leading-2">
+              Go To Shop{" "}
+            </p>
+            <p className="text-4xl text-center pb-1">&rarr;</p>
+          </Link>
+          <button
+            className="border-gray-1000 border-2 h-[40] px-4 text-gray-1000 hover:text-black hover:border-black"
+            onClick={previous}
+          >
+            {" "}
+            &#60;{" "}
+          </button>
+          <button
+            className="border-gray-1000 border-2 h-[40] px-4 text-gray-1000 hover:text-black hover:border-black"
+            onClick={next}
+          >
+            {" "}
+            &#62;{" "}
+          </button>
+        </div>
       </section>
-      <div className='flex gap-4'>
-      <Link href='/'  className='flex justify-between items-center bg-gray-1000 px-4 py-[20px] w-[265px] h-[40px] '>
-      <p className='font-Beatrice-Deck-Trial font-medium leading-2'>Go To Shop </p>
-      <p className='text-4xl text-center pb-1'>&rarr;</p>
-      </Link>
-      <button className='border-gray-1000 border-2 h-[40] px-4 text-gray-1000 hover:text-black hover:border-black' onClick={handleClickdown}> &#60;  </button>
-      <button className='border-gray-1000 border-2 h-[40] px-4 text-gray-1000 hover:text-black hover:border-black' onClick={handleClickup}> &#62;  </button>
-      </div>
+     <section className='w-1/2'>
+      <ul>
+        <Slider
+          ref={(slider) => {
+            sliderRef = slider;
+          }}
+          {...settings}
+        >
+          {
+           
+       outfits.map((item,index) =>
+       <li key={index} className='p-2'>
+              <Image
+                src={item}
+                alt="outfit"
+                width={400}
+                height={420}
+                className="border boder-2 border-gray-400 "
+              />
+            </li>
+         ) }
+        </Slider>
+      </ul>
       </section>
-      <aside className='flex  justify-center gap-6 w-1/2 pr-16'>
-            <Image src={slide(counter)} alt='outfit' width={366} height={376} className='border boder-2 border-gray-400 '/>
-            <Image src={slide(counter+1)} alt='outfit' width={366} height={376} className='border boder-2 border-gray-400'/>
-          </aside>
-      </div>
-  )}
+    </div>
+  );}
 
 export default Hero;

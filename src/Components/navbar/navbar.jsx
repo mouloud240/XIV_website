@@ -20,7 +20,7 @@ const handledrawer = () => {
         <div className="flex justify-between items-center">
             <ul className="flex gap-6 items-center">
                 <button onClick={handledrawer}>
-                    <Image
+                    <img
                     src={'Assets/drawer.svg'}
                     width={35}
                     height={45}
@@ -44,11 +44,11 @@ const handledrawer = () => {
             </ul>
             <div>
                 <Link href={'/'}>
-                <Image
+                <img
                 src={'Assets/Logo.svg'}
                 width={45}
                 height={45}
-                
+                alt='logo'
                 />
                 </Link>
         
@@ -56,7 +56,7 @@ const handledrawer = () => {
             <div className="flex gap-10 ">
               
                 <div className=" rounded-full bg-black flex justify-center  px-6 items-center cursor-pointer   ">
-                    <Image
+                    <img
                     src={'Assets/heart.svg'}
                     width={25}
                     height={25}
@@ -74,7 +74,7 @@ const handledrawer = () => {
                         
                     </div>
                     <div className="border-8 border-black rounded-full border-opacity-80 cursor-pointer ">
-                    <Image
+                    <img
                           src={'Assets/bag.svg'}
                           height={45}
                           width={60}
@@ -85,7 +85,7 @@ const handledrawer = () => {
                 </div>
                
                 <div className="bg-black bg-opacity-80 rounded-full items-center flex  hover:bg-blue-900 duration-500  justify-center px-7 cursor-pointer">
-                    <Image
+                    <img
                     src={'Assets/profile.svg'}
                     height={25}
                     width={25}
