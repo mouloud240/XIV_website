@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-const CollectionItem = ({name,category,image,price,color}) => {
+const CollectionItem = ({name,category,image,price,color,stockNum}) => {
   return (
     <div>
         <div className='relative'>
@@ -27,9 +27,14 @@ const CollectionItem = ({name,category,image,price,color}) => {
                 <div className='text-gray-500 font-medium font-Beatrice-Deck-Trial text-lg '>
                  {category}
                 </div  >
-                <div className={`bg-${color} w-3 h-3 ring-1 ring-gray-400  shadow-2xl`}>
-                  
-                </div>
+               <div className='flex gap-1 items-center'>
+                 <div className={`bg-${color} w-3 h-3 ring-1 ring-gray-400  shadow-2xl`}>
+                   
+                 </div>
+                 <div className='font-Beatrice-Deck-Trial text-gray-400 text-lg font-thin'>
+                   + {stockNum}
+                 </div>
+               </div>
                 
             </div>
             <div className='flex justify-between w-[23vw] ' >
