@@ -25,7 +25,7 @@ const Week = () => {
     infinite: true,
     slidesToShow: 4,
     speed: 1000,
-    focusOnSelect: true,
+    focusOnSelect: false,
     arrows:false
   };
   return (
