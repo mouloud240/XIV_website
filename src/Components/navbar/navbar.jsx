@@ -116,7 +116,7 @@ const handledrawer = () => {
                         </motion.button>
                         <motion.div whileTap={{scale:0.85}}  className="border-8 border-black rounded-full border-opacity-80 cursor-pointer ">
                         <motion.img                                src={'Assets/bag.svg'}
-                              height={45}
+                              height={46}
                               width={60}
                               alt="Bag"
                               />
