@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-
+import { motion } from 'framer-motion'
 const CollectionItem = ({name,category,image,price,color,stockNum}) => {
   return (
     <div>
@@ -14,7 +14,7 @@ const CollectionItem = ({name,category,image,price,color,stockNum}) => {
             alt={name}
             />
         <div className='absolute translate-y-[-100%] translate-x-[330%]'>
-        <Image
+        <motion.img whileTap={{scale:0.85}} className='cursor-pointer'
             src={'Assets/Addbutton.svg'}
             width={45}
             height={45}
