@@ -3,12 +3,30 @@ import React, { useState } from 'react'
 import CollectionItem from './collectionItem';
 import {categories, colItems} from './constants';
 import Image from 'next/image';
-
+import { delay, motion } from 'framer-motion';
 const Collection = () => {
   const [clickedItem,setClickedItem]=useState(0);
   const [filterClicked,setFilterClicked]=useState(false);
   const [sortsClicked,setSortsClicked]=useState(false);
   const [viewMoreClicked,setViewMoreCliked]=useState(false);
+  const listItemsvariants={
+    hidden:{
+      x:50,
+      y:10,
+      opacity:0
+    },
+    visible:(index)=>(
+      {
+        x:0,
+        y:0,
+        opacity:1,
+        transition:{
+          delay:0.2*index,
+          type:"spring"
+        }
+      }
+    )
+  }
   return (
     <div className=' p-26 mt-4 flex flex-col gap-10 duration-300 '>
 <div className='ml-24'>
@@ -26,9 +44,9 @@ const Collection = () => {
                 let textColor= index != clickedItem ? "gray-400" : "black";
                 return (
               <li key={index}>
-                <button className={`font-Beatrice-Deck-Trial  font-medium text-xl text-${textColor}`} onClick={()=>setClickedItem(index)}>
+                <motion.button whileTap={{scale:0.75}} className={`font-Beatrice-Deck-Trial  font-medium text-xl text-${textColor}`} onClick={()=>setClickedItem(index)}>
                     {inputstring}
-                </button>
+                </motion.button>
               </li>
   
             )})
@@ -36,11 +54,11 @@ const Collection = () => {
           </ul>
          <div className='flex gap-16'>
           <div>
-            <button onClick={()=>setFilterClicked(!filterClicked)}>
+            <motion.button whileTap={{scale:0.75}} onClick={()=>setFilterClicked(!filterClicked)}>
               <h1 className='font-Beatrice-Deck-Trial text-lg '>
                  Filters  {filterClicked?"(-)":"(+)"}
               </h1>
-            </button>
+            </motion.button>
           {
             filterClicked&&(
               <div>
@@ -62,11 +80,11 @@ const Collection = () => {
           }
           </div>
           <div>
-          <button onClick={()=>setSortsClicked(!sortsClicked)}>
+          <motion.button whileTap={{scale:0.75}} onClick={()=>setSortsClicked(!sortsClicked)}>
               <h1 className='font-Beatrice-Deck-Trial text-lg '>
                  Sorts  {sortsClicked?"(-)":"(+)"}
               </h1>
-            </button>
+            </motion.button>
           {
             sortsClicked&&(
               <div className='text-gray-500 font-Beatrice-Deck-Trial text-md font-normal'>
@@ -91,7 +109,8 @@ const Collection = () => {
     colItems.map((item, index) => {
       return (
         (viewMoreClicked || index <3) && (
-          <li key={index}>
+          <motion.li variants={listItemsvariants} viewport={{once:true}} initial="hidden" whileInView="visible" custom={index} key={index}>
+
             <CollectionItem
               name={item.name}
               image={item.image}
@@ -100,7 +119,7 @@ const Collection = () => {
               price={item.price}
               stockNum={item.numberOnStock}
             />
-          </li>
+          </motion.li>
         )
       );
     })

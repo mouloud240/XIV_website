@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRef } from 'react'
 
-
+import { motion } from 'framer-motion'
 
 
 
@@ -36,9 +36,24 @@ let sliderRef = useRef(null);
     autoplaySpeed: 2000,
   };
 
+ const heroVariants={
+    hidden:{
+      opacity:0,
+      x:"-100vh"
+    },
+    visible:{
+      opacity:1,
+      x:0,
+      transition:{
+        type:"spring",
+        duration:1,
+        stiffness:120
 
+      }
+    }
+  }
   return (
-    <div className=" px-10 py-20 flex justify-between font-Beatrice-Deck-Trial ">
+    <motion.div variants={heroVariants} initial="hidden" animate="visible" className=" px-10 py-20 flex justify-between font-Beatrice-Deck-Trial ">
       <section className="">
         <section className="mb-72">
           <h1 className=" font-extrabold text-6xl tracking-relaxed leading-12 text-center w-72 ">
@@ -56,20 +71,20 @@ let sliderRef = useRef(null);
             </p>
             <p className="text-4xl text-center pb-1">&rarr;</p>
           </Link>
-          <button
+          <motion.button whileTap={{scale:0.85}}
             className="border-gray-1000 border-2 h-[40] px-4 text-gray-1000 hover:text-black hover:border-black"
             onClick={previous}
           >
             {" "}
             &#60;{" "}
-          </button>
-          <button
+          </motion.button>
+          <motion.button  whileTap={{scale:0.85}}
             className="border-gray-1000 border-2 h-[40] px-4 text-gray-1000 hover:text-black hover:border-black"
             onClick={next}
           >
             {" "}
             &#62;{" "}
-          </button>
+          </motion.button>
         </div>
       </section>
      <section className='w-1/2'>
@@ -96,7 +111,7 @@ let sliderRef = useRef(null);
         </Slider>
       </ul>
       </section>
-    </div>
+    </motion.div>
   );}
 
 export default Hero;

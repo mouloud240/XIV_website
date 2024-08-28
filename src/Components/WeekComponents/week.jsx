@@ -7,8 +7,23 @@ import { useRef } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-
+import { delay, easeIn, motion } from 'framer-motion';
+const weekItemsvariants={
+  hidden:{
+    opacity:0,
+    y:50
+  },
+  visible:(index)=>({
+    
+    y:0,
+    transition:{
+     delay:0.2*index,
+     type:"spring",
+     ease:easeIn
+    },
+    opacity:1
+  })
+}
 const Week = () => {
  
   let sliderRef = useRef(null);
@@ -21,7 +36,7 @@ const Week = () => {
   
   const settings = {
     className: "center",
-    centerMode: true,
+    centerMode: false,
     infinite: true,
     slidesToShow: 4,
     speed: 1000,
@@ -29,7 +44,7 @@ const Week = () => {
     arrows:false
   };
   return (
-    <main className=" px-10 mb-16 flex flex-col gap-5 font-Beatrice-Deck-Trial tracking-relaxed leading-12">
+    <motion.div   className=" px-10 mb-16 flex flex-col gap-5 font-Beatrice-Deck-Trial tracking-relaxed leading-12">
       <section className="flex justify-between items-end my-5 ">
         <div className="flex items-center gap-0">
           <h1 className="font-Beatrice-Deck-Trial font-extrabold text-6xl tracking-relaxed leading-12  text-start ">
@@ -52,7 +67,7 @@ const Week = () => {
           {...settings}
         >
           {products.map((data, index) => (
-            <li key={index} className="mx-4">
+            <motion.li custom={index} whileInView="visible" initial='hidden' variants={weekItemsvariants} key={index} className="mx-4">
               <Image
                 src={data.path}
                 alt={"product"}
@@ -71,27 +86,27 @@ const Week = () => {
                   <p>{data.price}$</p>
                 </div>
               </div>
-            </li>
+            </motion.li>
           ))}
         </Slider>
       </section>
       <section className="flex gap-5 justify-center">
-        <button
+        <motion.button whileTap={{scale:0.85}}
           className="border-gray-1000 border-2 px-6 py-3  text-gray-1000 hover:text-black hover:border-black"
           onClick={previous}
         >
           {" "}
           &#60;{" "}
-        </button>
-        <button
+        </motion.button>
+        <motion.button whileTap={{scale:0.85}}
           className="border-gray-1000 border-2 px-6 py-3 text-gray-1000 hover:text-black hover:border-black"
           onClick={next}
         >
           {" "}
           &#62;{" "}
-        </button>
+        </motion.button>
       </section>
-    </main>
+    </motion.div>
   );
 }
 
